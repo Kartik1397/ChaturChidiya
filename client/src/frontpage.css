@@ -3,27 +3,25 @@
 
 .scroll-space {
   height: 10vh;
-  background-color: lightblue;
 }
 
 .logo-space {
   height: 30vh;
-  background-color: lightcoral;
 }
 
 .card-grid {
   height: 60vh;
-  background-color: lightgreen;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .nav-container {
   height: 10vh;
-  background-color: lightseagreen;
 }
 
 .main-section {
   height: 70vh;
-  background-color: lightslategrey;
   overflow: hidden;
 }
 
@@ -51,33 +49,126 @@
 
 .logo {
   position: fixed;
-  display: grid;
   z-index: 100;
-  place-items: center center;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 100vw;
-}
-
-.logo-svg {
-  transform: scale(1);
+  height: 70vh;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .logo-wrapper {
-  width: 40vw;
+  height: 50%;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .slogan {
   text-align: center;
   font-size: 1.4em;
   font-family: "Parisienne", cursive;
+  margin-top: 50px;
 }
 
 .slogan::before,
 .slogan::after {
   display: inline-block;
   content: "";
-  width: 20vh;
+  width: 20vw;
   margin: 0 20px;
   border-top: 1px solid black;
   transform: translateY(-200%);
+}
+
+@media screen and (max-width: 900px) {
+  .slogan::before,
+  .slogan::after {
+    width: 10vh;
+  }
+
+  body {
+    font-size: 70%;
+  }
+}
+/*
+#ff3389
+#68bbaf
+#DC143C
+*/
+.card {
+  transition: 1s ease all;
+  border-radius: 5vh;
+}
+
+.card-title {
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.title1 {
+  color: #ff3389;
+}
+
+.title2 {
+  color: #68bbaf;
+}
+
+.title3 {
+  color: #dc143c;
+}
+
+.card1 {
+  border: 4px solid #ff3389;
+  height: 30vh;
+  width: 30vh;
+  z-index: 1;
+}
+
+.card2 {
+  border: 4px solid #68bbaf;
+  height: 30vh;
+  width: 30vh;
+}
+
+.card3 {
+  border: 4px solid #dc143c;
+  height: 30vh;
+  width: 30vh;
+}
+.card:hover {
+  border-radius: 100%;
+}
+
+.card:hover ~ .buttons {
+  opacity: 1;
+  transform: scale(0.7);
+}
+
+.navGrid {
+  height: 10vh;
+  background-color: lightgray;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.buttons {
+  opacity: 0;
+  position: absolute;
+  transition: all 0.5s ease-in-out;
+  transform: scale(0.5);
+  height: 5vh;
+  width: 5vh;
+}
+
+.button {
+  position: absolute;
+  height: 5vh;
+  width: 5vh;
+  background-color: black;
+  display: inline-block;
+  border-radius: 100px;
 }
