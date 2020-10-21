@@ -1,5 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Parisienne&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Khula:wght@300;400;600;700;800&display=swap");
+.main {
+  overflow: hidden;
+}
 
 .scroll-space {
   height: 10vh;
@@ -16,8 +17,26 @@
   align-items: center;
 }
 
+@media screen and (max-width: 900px) {
+  .card-grid {
+    height: 60vh;
+    display: flex;
+    justify-content: left;
+    overflow-x: auto;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card-wrapper {
+    padding: 0 10px;
+  }
+}
+
 .nav-container {
   height: 10vh;
+  margin: 0 7vh;
 }
 
 .main-section {
@@ -100,6 +119,9 @@
 .card {
   transition: 1s ease all;
   border-radius: 5vh;
+  cursor: pointer;
+  height: 30vh;
+  width: 30vh;
 }
 
 .card-title {
@@ -122,22 +144,16 @@
 
 .card1 {
   border: 4px solid #ff3389;
-  height: 30vh;
-  width: 30vh;
-  z-index: 1;
 }
 
 .card2 {
   border: 4px solid #68bbaf;
-  height: 30vh;
-  width: 30vh;
 }
 
 .card3 {
   border: 4px solid #dc143c;
-  height: 30vh;
-  width: 30vh;
 }
+
 .card:hover {
   border-radius: 100%;
 }
@@ -147,12 +163,37 @@
   transform: scale(0.7);
 }
 
+.nav-about {
+  color: #0000ff;
+}
+
+.nav-design {
+  color: #00bfff;
+}
+
+.nav-testimony {
+  color: #32cd32;
+}
+
+.nav-contact {
+  color: #ffd700;
+}
+
+.nav-bold {
+  font-weight: bolder;
+  /* letter-spacing: 1.2em; */
+}
 .navGrid {
   height: 10vh;
-  background-color: lightgray;
   display: flex;
   justify-content: space-around;
   align-items: center;
+
+  font-size: 1.3em;
+}
+
+.navGrid div {
+  cursor: pointer;
 }
 
 .buttons {

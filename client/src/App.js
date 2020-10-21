@@ -1,16 +1,14 @@
 import React from 'react';
 import './App.css';
-import { gsap, ScrollTrigger, Draggable, MotionPathPlugin, CSSRulePlugin } from "gsap/all";
+import { gsap, ScrollTrigger, CSSRulePlugin, ScrollToPlugin } from "gsap/all";
 
 import "./fpAnim";
 import './frontpage.css';
-
-// panth thakkar 
-//pujan can you see me ?
+import { Power2 } from 'gsap';
 
 class App extends React.Component {
   componentDidMount() {
-    gsap.registerPlugin(ScrollTrigger, CSSRulePlugin);
+    gsap.registerPlugin(ScrollTrigger, CSSRulePlugin, ScrollToPlugin);
 
     var tl = gsap.timeline();
 
@@ -27,13 +25,14 @@ class App extends React.Component {
     var rule = CSSRulePlugin.getRule(".slogan::before");
     tl.from(rule, {
       cssRule: {
-        width: 0
-      }
+        width: 0,
+      },
+      duration: 2.5,
+      ease: "power4.out"
     }, "-=0.4")
 
     var tl1 = gsap.timeline({
       scrollTrigger: {
-        markers: true,
         trigger: ".scroll-space",
         start: "top top",
         end: "bottom top",
@@ -43,6 +42,7 @@ class App extends React.Component {
 
     tl1.to(".logo", {
       top: 0,
+      y: 0,
       yPercent: 0,
       height: "30vh"
     })
@@ -55,7 +55,6 @@ class App extends React.Component {
 
     var tl2 = gsap.timeline({
       scrollTrigger: {
-        //markers: true,
         trigger: ".logo-space",
         pin: ".main",
         toggleActions: "play reverse restart reverse",
@@ -71,7 +70,6 @@ class App extends React.Component {
         trigger: ".card-grid",
         start: "top top",
         end: "bottom top",
-        //markers: true,
         scrub: 1
       }
     })
@@ -87,33 +85,25 @@ class App extends React.Component {
     function popUp(buttons, circle) {
       var cx = circle.offsetTop + circle.offsetHeight/2;
       var cy = circle.offsetLeft + circle.offsetWidth/2;
-      console.log(cx, cy);
 
       var bx = buttons.offsetHeight/2;
       var by = buttons.offsetWidth/2;
-      console.log(bx, by);
 
       buttons.style.top = "" + (cx+bx) + "px";
       buttons.style.left = "" + (cy+by) + "px";
 
       var x = buttons.offsetTop;
-      console.log("x", x);
       var y = buttons.offsetLeft;
       var theta = 0;
 
       var button_list = buttons.childNodes;
 
-      console.log(button_list);
       var r = (visualViewport.height+visualViewport.width)/200 * 25;
       for (let i = 0; i < button_list.length; i++) {
           button_list[i].style.top = "" + (r*Math.sin(theta) - 3*button_list[i].offsetHeight/2) + "px";
           button_list[i].style.left = "" + (r*Math.cos(theta) - 3*button_list[i].offsetWidth/2) + "px";
-          console.log(x);
-          console.log(r*Math.sin(theta))
-          console.log(x + r*Math.sin(theta));
           theta += Math.PI/5;
       }
-
     }
 
     var buttons1 = document.querySelector(".buttons1");
@@ -125,7 +115,41 @@ class App extends React.Component {
     var buttons3 = document.querySelector(".buttons3");
     var circle3 = document.querySelector(".card3");
     popUp(buttons3, circle3);
+
+    var vh = visualViewport.height/100;
+
+    var tl4 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".main-section",
+        start: `${30*vh} ${30*vh}`,
+        end: `+=${310*vh} ${100*vh}`,
+        pin: ".main",
+        scrub: true
+      }
+    })
+
+    tl4.to(".pages", {
+      yPercent: -75,
+      ease: "none"
+    })
   }
+
+  GSAPscroll(pos ,id) {
+    gsap.to(window, {duration: 1, scrollTo: pos});
+    document.querySelector('.navGrid').childNodes.forEach(child => {
+      console.log(child.classList);
+      if(child.classList.length === 2)
+        child.classList.remove('nav-bold');
+    })
+    document.querySelector('.'+id).classList.add("nav-bold");
+    //  gsap.to("."+id,{
+    //   '-webkit-text-stroke': '2px',
+    //   ease: Power2,
+    //   letterSpacing:5,
+    // })
+    
+  }
+
   render() {
     return (
       <>
@@ -145,7 +169,7 @@ class App extends React.Component {
         <div className="logo-space">
         </div>
         <div className="card-grid">
-          <div>
+          <div className="card-wrapper">
             <div className="card-title title1">decor</div>
             <div className="card card1"></div>
             <div class="buttons buttons1">
@@ -161,7 +185,7 @@ class App extends React.Component {
               <div class="button"></div>
             </div>
           </div>
-          <div>
+          <div className="card-wrapper">
           <div className="card-title title2">furniture</div>
             <div className="card card2"></div>
             <div class="buttons buttons2">
@@ -177,7 +201,7 @@ class App extends React.Component {
               <div class="button"></div>
             </div>
           </div>
-          <div>
+          <div className="card-wrapper">
             <div className="card-title title3">projects</div>
             <div className="card card3"></div>
             <div class="buttons buttons3">
@@ -196,17 +220,19 @@ class App extends React.Component {
         </div>
         <div className="nav-container">
           <div className = "navGrid">
-            <div className = "nav-about"> About</div>
-            <div className = "nav-design">Design</div>
-            <div className = "nav-testimony">Testimony</div>
-            <div className = "nav-contact">Contact Us</div>
+            <div onClick={() => {this.GSAPscroll(visualViewport.height/100*110 , "nav-about")}} className = "nav-about"> About</div>
+            <div onClick={() => {this.GSAPscroll(visualViewport.height/100*190 , "nav-design")}} className = "nav-design">Design</div>
+            <div onClick={() => {this.GSAPscroll(visualViewport.height/100*270 , "nav-testimony")}} className = "nav-testimony">Testimony</div>
+            <div onClick={() => {this.GSAPscroll(visualViewport.height/100*380,"nav-contact")}} className = "nav-contact">Contact Us</div>
           </div>
         </div>
         <div className="main-section">
-          <div className="page about"></div>
-          <div className="page design"></div>
-          <div className="page testimony"></div>
-          <div className="page contact"></div>
+          <div className="pages">
+            <div className="page about"></div>
+            <div className="page design"></div>
+            <div className="page testimony"></div>
+            <div className="page contact"></div>
+          </div>
         </div>
       </div>
       </>
