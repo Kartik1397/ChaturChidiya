@@ -39,6 +39,12 @@
   margin: 0 7vh;
 }
 
+@media screen and (max-width: 900px) {
+  .nav-container {
+    margin: 0;
+  }
+}
+
 .main-section {
   height: 70vh;
   overflow: hidden;
@@ -203,6 +209,12 @@
   padding: 0 15vh;
 }
 
+@media screen and (max-width: 900px) {
+  .page {
+    padding: 0 2vh;
+  }
+}
+
 .founder-img {
   height: 30vh;
   background-color: lightgray;
@@ -211,7 +223,7 @@
 }
 
 .text {
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 
 .row {
