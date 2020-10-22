@@ -117,7 +117,7 @@ class App extends React.Component {
     popUp(buttons3, circle3);
 
     var vh = visualViewport.height/100;
-
+    var actions = "play none none reverse";
     var tl4 = gsap.timeline({
       scrollTrigger: {
         trigger: ".main-section",
@@ -132,17 +132,139 @@ class App extends React.Component {
       yPercent: -75,
       ease: "none"
     })
+
+    var tl5 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".design",
+        start: `${30*vh} ${30*vh}`,
+        end: `${100*vh} ${30*vh}`,
+        onEnter: () => {
+          this.setBold('nav-design');
+        },
+        onEnterBack : () => {
+          this.setBold('nav-design');
+        },
+        toggleActions: actions
+      }
+    })
+
+    tl5.from(".design .founder-img", {
+      opacity: 0,
+      y: 50,
+      duration: 1
+    })
+    tl5.from(".design .text", {
+      opacity: 0,
+      y: 100,
+      duration: 1
+    }, "-=0.5")
+    tl5.from(".design .col", {
+      stagger: {
+        each: 0.3,
+        ease: "power2.inOut",
+        from: 'start'
+      },
+      opacity: 0,
+      y: 30
+    }, "-=0.5")
+
+
+    var tl6 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".about",
+        start: `${20*vh} ${30*vh}`,
+        end: `${100*vh} ${30*vh}`,
+        toggleActions: actions,
+        snap: 0,
+        onEnter: () => {
+          this.setBold('nav-about');
+        },
+        onEnterBack: () => {
+          this.setBold('nav-about');
+        }
+      }
+    })
+    tl6.from(".about .founder-img", {
+      opacity: 0,
+      y: 50,
+      duration: 1
+    })
+    tl6.from(".about .text", {
+      opacity: 0,
+      y: 100,
+      duration: 1
+    }, "-=0.5")
+
+    var tl7 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".testimony",
+        start: `${30*vh} ${30*vh}`,
+        end: `${100*vh} ${30*vh}`,
+        onEnter: () => {
+          this.setBold('nav-testimony');
+        },
+        onEnterBack: () => {
+          this.setBold('nav-testimony');
+        },
+        toggleActions: actions,
+      }
+    })
+
+    tl7.from(".testimony .founder-img", {
+      opacity: 0,
+      y: 50,
+      duration: 1
+    })
+    tl7.from(".testimony .text", {
+      opacity: 0,
+      y: 100,
+      duration: 1
+    }, "-=0.5")
+
+    var tl8 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".contact",
+        start: `${30*vh} ${30*vh}`,
+        end: `bottom ${30*vh}`,
+        onEnter: () => {
+          this.setBold('nav-contact');
+        },
+        
+        onEnterBack: () => {
+          this.setBold('nav-contact');
+        },
+        toggleActions: actions,
+      }
+    })
+
+    tl8.from(".contact .founder-img", {
+      opacity: 0,
+      y: 50,
+      duration: 1
+    })
+    tl8.from(".contact .col", {
+      stagger: {
+        each: 0.3,
+        ease: "power2.inOut",
+        from: 'start'
+      },
+      opacity: 0,
+      y: 30
+    }, "-=0.5")
   }
 
-  GSAPscroll(pos ,id) {
-    gsap.to(window, {duration: 1, scrollTo: pos});
+  setBold(id) {
     document.querySelector('.navGrid').childNodes.forEach(child => {
       console.log(child.classList);
       if(child.classList.length === 2)
         child.classList.remove('nav-bold');
     })
     document.querySelector('.'+id).classList.add("nav-bold");
-    //  gsap.to("."+id,{
+  }
+
+  GSAPscroll(pos ,id) {
+    gsap.to(window, {duration: 1, scrollTo: pos+2});
+    //  gsap.to("."+id,{ 
     //   '-webkit-text-stroke': '2px',
     //   ease: Power2,
     //   letterSpacing:5,
@@ -228,10 +350,64 @@ class App extends React.Component {
         </div>
         <div className="main-section">
           <div className="pages">
-            <div className="page about"></div>
-            <div className="page design"></div>
-            <div className="page testimony"></div>
-            <div className="page contact"></div>
+            <div className="page about">
+              <div className="founder-img"></div>
+              <div className="text">
+              about the founders and the rest of the team few liners for how it os generally used for
+how it os generally used few liners for how it os generally used for how it os generally used.
+few liners for how it os generally used for how it os generally used few liners for how it os
+generally used for how it os generally used.
+              </div>
+            </div>
+            <div className="page design">
+              <div className="founder-img"></div>
+              <div className="text">
+              about the founders and the rest of the team few liners for how it os generally used for
+how it os generally used few liners for how it os generally used for how it os generally used.
+              </div>
+              <div className="row">
+                <div className="col">
+                  <div className="small-title">Vision</div>
+                  <div className="text-m">write up</div>
+                </div>
+                <div className="col">
+                  <div className="small-title">Mission</div>
+                  <div className="text-m">write up</div>
+                </div>
+                <div className="col">
+                  <div className="small-title">Goal</div>
+                  <div className="text-m">write up</div>
+                </div>
+              </div>
+            </div>
+            <div className="page testimony">
+              <div className="founder-img"></div>
+              <div className="text">
+              about the founders and the rest of the team few liners for how it os generally used for
+how it os generally used few liners for how it os generally used for how it os generally used.
+              </div>
+            </div>
+            <div className="page contact">
+             <div className="founder-img"></div>
+              <div className="row">
+                <div className="col">
+                  <div className="small-title">address</div>
+                  <div className="text-m">write up</div>
+                </div>
+                <div className="col">
+                  <div className="small-title">contact person</div>
+                  <div className="text-m">write up</div>
+                </div>
+                <div className="col">
+                  <div className="small-title">timings</div>
+                  <div className="text-m">write up</div>
+                </div>
+                <div className="col">
+                  <div className="small-title">inquiry form</div>
+                  <div className="text-m">write up</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
