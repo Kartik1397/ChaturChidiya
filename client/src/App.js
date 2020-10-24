@@ -230,7 +230,6 @@ class App extends React.Component {
 
   setBold(id) {
     document.querySelector('.navGrid').childNodes.forEach(child => {
-      console.log(child.classList);
       if(child.classList.length === 2)
         child.classList.remove('nav-bold');
     })
