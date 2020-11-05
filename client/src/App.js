@@ -28,7 +28,12 @@ class App extends React.Component {
       opacity: 0
     }, "-=0.8")
 
-    var rule = CSSRulePlugin.getRule(".slogan::before");
+    console.log(CSSRulePlugin);
+    var rule = CSSRulePlugin.getRule(".slogan::after");
+    if (rule === undefined) {
+      rule = CSSRulePlugin.getRule(".slogan::before");
+    }
+    console.log(rule);
     tl.from(rule, {
       cssRule: {
         width: 0,
@@ -188,11 +193,10 @@ class App extends React.Component {
       ease: "none"
     })
 
-
     var tl = gsap.timeline({
       scrollTrigger: {
         trigger: "."+id,
-        start: () => `${30*vh} ${30*vh}`,
+        start: () => `${30*vh-10} ${30*vh}`,
         end: () => `${100*vh} ${30*vh}`,
         onEnter: () => {
           this.setBold('nav-' + id);
