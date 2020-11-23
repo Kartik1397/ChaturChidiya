@@ -2,12 +2,8 @@ import React from 'react';
 import './productdetail.css';
 
 class ProductDetailPage extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
-    console.log(this.props);
     return (
       <>
         <div class="product-detail-container">

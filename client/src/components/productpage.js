@@ -108,11 +108,10 @@ class ProductPage extends React.Component {
     })
 
     var elems = document.querySelectorAll('.catagory');
-    console.log(elems);
     elems.forEach(e => {
       e.className = "catagory";
     })
-    var elems = document.querySelectorAll('.product-type');
+    elems = document.querySelectorAll('.product-type');
     console.log(elems);
     elems.forEach(e => {
       e.className = "product-type";

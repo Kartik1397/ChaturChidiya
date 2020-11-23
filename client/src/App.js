@@ -4,7 +4,7 @@ import FrontPage from './components/frontpage';
 import ProductPage from './components/productpage';
 import ProductDetailPage from './components/productdetail';
 
-import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 class App extends React.Component {
   render() {
