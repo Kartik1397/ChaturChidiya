@@ -1,0 +1,44 @@
+.product-catagories {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 5vh;
+}
+
+.do-bold {
+  font-weight: bold;
+}
+
+.catagory {
+  font-size: 1.5rem;
+}
+
+.product-line {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 10vh;
+  margin-bottom: 5vh;
+}
+
+.product-type {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  height: 10vh;
+  width: 10vh;
+}
+
+.products-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.product {
+  height: 20vh;
+  background-color: red;
+  margin: 20px;
+  text-align: center;
+}
+
+.product-logo-space {
+  height: 10vh;
+}
