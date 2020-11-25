@@ -269,7 +269,7 @@ class FrontPage extends React.Component {
             <div className="card-wrapper">
               <div className="card-title title1">decor</div>
               <div className="card card1">
-                <img src={cclogo} class="card-logo"></img>
+                <img src={cclogo} class="card-logo" alt="logo"></img>
               </div>
               <div class="buttons buttons1">
                 <div class="button"></div>
@@ -281,7 +281,7 @@ class FrontPage extends React.Component {
             <div className="card-wrapper">
             <div className="card-title title2">furniture</div>
               <div className="card card2">
-                <img src={stlogo} class="card-logo"></img>
+                <img src={stlogo} class="card-logo" alt="logo"></img>
               </div>
               <div class="buttons buttons2">
                 <div class="button"></div>
@@ -293,7 +293,7 @@ class FrontPage extends React.Component {
             <div className="card-wrapper">
               <div className="card-title title3">projects</div>
               <div className="card card3">
-                <img src={inoutlogo} class="card-logo"></img>
+                <img src={inoutlogo} class="card-logo" alt="logo"></img>
               </div>
               <div class="buttons buttons3">
                 <div class="button"></div>

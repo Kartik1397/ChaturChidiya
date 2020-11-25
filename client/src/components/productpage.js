@@ -159,12 +159,12 @@ class ProductPage extends React.Component {
     return (
       <div class="product-page-wrapper">
         <div class="side-menu">
-          <img src={stlogo} className="side-menu-logo"></img>
-          <img src={inoutlogo} className="side-menu-logo"></img>
+          <img src={stlogo} className="side-menu-logo" alt="logo"></img>
+          <img src={inoutlogo} className="side-menu-logo" alt="logo"></img>
         </div>
         <div class="product-view">
           <div class="product-logo-space">
-            <img src={cclogo} class="product-page-logo"></img>
+            <img src={cclogo} class="product-page-logo" alt="logo"></img>
           </div>
           <div class="productpage">
             <div class="product-catagories">
