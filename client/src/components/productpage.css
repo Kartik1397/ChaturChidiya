@@ -1,3 +1,26 @@
+.product-page-wrapper {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+}
+
+.side-menu {
+  width: 10vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-menu-logo {
+  padding-top: 2vw;
+  padding-left: 1vw;
+  max-width: 7vw;
+}
+
+.product-view {
+  width: 90vw;
+}
+
 .product-catagories {
   display: flex;
   justify-content: space-evenly;
@@ -34,11 +57,18 @@
 
 .product {
   height: 20vh;
-  background-color: red;
+  background-color: rgba(0, 0, 0, 0.1);
   margin: 20px;
   text-align: center;
 }
 
 .product-logo-space {
-  height: 10vh;
+  height: 20vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-page-logo {
+  max-height: 13vh;
 }

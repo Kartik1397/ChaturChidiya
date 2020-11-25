@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './productpage.css';
 
+import cclogo from '../img/cclogo.png';
+import stlogo from '../img/stlogo.png';
+import inoutlogo from '../img/inoutlogo.png';
+
 class ProductPage extends React.Component {
   constructor() {
     super();
@@ -153,39 +157,46 @@ class ProductPage extends React.Component {
       }} style={{ textDecoration: 'none', color: 'black' }}>{product}</Link></div>);
     });
     return (
-      <>
-        <div class="side-menu"></div>
-        <div class="product-logo-space"></div>
-        <div class="productpage">
-          <div class="product-catagories">
-            <div id="stationary" class="catagory do-bold" onClick={this.changeCatagory}>Stationary</div>
-            <div id="homedecor" class="catagory" onClick={this.changeCatagory}>Home Decor</div>
-            <div id="gardendecor" class="catagory" onClick={this.changeCatagory}>Garden Decor</div>
-            <div id="lightingsol" class="catagory" onClick={this.changeCatagory}>Lighting Solution</div>
+      <div class="product-page-wrapper">
+        <div class="side-menu">
+          <img src={stlogo} className="side-menu-logo"></img>
+          <img src={inoutlogo} className="side-menu-logo"></img>
+        </div>
+        <div class="product-view">
+          <div class="product-logo-space">
+            <img src={cclogo} class="product-page-logo"></img>
           </div>
-          <div class="product-line">
-            { productTypes }
-            {/* <div class="product-type">notebooks</div>
-            <div class="product-type">pen stands</div>
-            <div class="product-type">paper weight</div>
-            <div class="product-type">laptop stands</div> */}
-          </div>
-          <div class="products-container">
-            { products }
-            {/* <div class="product">sketch book</div>
-            <div class="product">sketch book</div>
-            <div class="product">sketch book</div>
-            <div class="product">sketch book</div>
-            <div class="product">sketch book</div>
-            <div class="product">sketch book</div>
-            <div class="product">sketch book</div>
-            <div class="product">sketch book</div>
-            <div class="product">sketch book</div>
-            <div class="product">sketch book</div>
-            <div class="product">sketch book</div> */}
+          <div class="productpage">
+            <div class="product-catagories">
+              <div id="stationary" class="catagory do-bold" onClick={this.changeCatagory}>Stationary</div>
+              <div id="homedecor" class="catagory" onClick={this.changeCatagory}>Home Decor</div>
+              <div id="gardendecor" class="catagory" onClick={this.changeCatagory}>Garden Decor</div>
+              <div id="lightingsol" class="catagory" onClick={this.changeCatagory}>Lighting Solution</div>
+            </div>
+            <div class="product-line">
+              { productTypes }
+              {/* <div class="product-type">notebooks</div>
+              <div class="product-type">pen stands</div>
+              <div class="product-type">paper weight</div>
+              <div class="product-type">laptop stands</div> */}
+            </div>
+            <div class="products-container">
+              { products }
+              {/* <div class="product">sketch book</div>
+              <div class="product">sketch book</div>
+              <div class="product">sketch book</div>
+              <div class="product">sketch book</div>
+              <div class="product">sketch book</div>
+              <div class="product">sketch book</div>
+              <div class="product">sketch book</div>
+              <div class="product">sketch book</div>
+              <div class="product">sketch book</div>
+              <div class="product">sketch book</div>
+              <div class="product">sketch book</div> */}
+            </div>
           </div>
         </div>
-      </>
+      </div>
     );
   }
 }

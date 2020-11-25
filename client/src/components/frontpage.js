@@ -3,6 +3,10 @@ import { gsap, ScrollTrigger, CSSRulePlugin, ScrollToPlugin } from "gsap/all";
 
 import './frontpage.css';
 
+import cclogo from '../img/cclogo.png';
+import inoutlogo from '../img/inoutlogo.png';
+import stlogo from '../img/stlogo.png';
+
 class FrontPage extends React.Component {
   componentDidMount() {
     gsap.registerPlugin(ScrollTrigger, CSSRulePlugin, ScrollToPlugin);
@@ -104,12 +108,13 @@ class FrontPage extends React.Component {
       var theta = 0;
 
       var button_list = buttons.childNodes;
+      var nbutton = button_list.length;
 
-      var r = (visualViewport.height+visualViewport.width)/200 * 25;
+      var r = (visualViewport.height+visualViewport.width)/200 * 20;
       for (let i = 0; i < button_list.length; i++) {
           button_list[i].style.top = "" + (r*Math.sin(theta) - 3*button_list[i].offsetHeight/2) + "px";
           button_list[i].style.left = "" + (r*Math.cos(theta) - 3*button_list[i].offsetWidth/2) + "px";
-          theta += Math.PI/5;
+          theta += Math.PI/(nbutton-1);
       }
     }
 
@@ -263,14 +268,10 @@ class FrontPage extends React.Component {
           <div className="card-grid">
             <div className="card-wrapper">
               <div className="card-title title1">decor</div>
-              <div className="card card1"></div>
+              <div className="card card1">
+                <img src={cclogo} class="card-logo"></img>
+              </div>
               <div class="buttons buttons1">
-                <div class="button"></div>
-                <div class="button"></div>
-                <div class="button"></div>
-                <div class="button"></div>
-                <div class="button"></div>
-                <div class="button"></div>
                 <div class="button"></div>
                 <div class="button"></div>
                 <div class="button"></div>
@@ -279,14 +280,10 @@ class FrontPage extends React.Component {
             </div>
             <div className="card-wrapper">
             <div className="card-title title2">furniture</div>
-              <div className="card card2"></div>
+              <div className="card card2">
+                <img src={stlogo} class="card-logo"></img>
+              </div>
               <div class="buttons buttons2">
-                <div class="button"></div>
-                <div class="button"></div>
-                <div class="button"></div>
-                <div class="button"></div>
-                <div class="button"></div>
-                <div class="button"></div>
                 <div class="button"></div>
                 <div class="button"></div>
                 <div class="button"></div>
@@ -295,13 +292,10 @@ class FrontPage extends React.Component {
             </div>
             <div className="card-wrapper">
               <div className="card-title title3">projects</div>
-              <div className="card card3"></div>
+              <div className="card card3">
+                <img src={inoutlogo} class="card-logo"></img>
+              </div>
               <div class="buttons buttons3">
-                <div class="button"></div>
-                <div class="button"></div>
-                <div class="button"></div>
-                <div class="button"></div>
-                <div class="button"></div>
                 <div class="button"></div>
                 <div class="button"></div>
                 <div class="button"></div>
