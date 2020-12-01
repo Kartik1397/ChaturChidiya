@@ -3,8 +3,17 @@ import { Link } from 'react-router-dom';
 import './productpage.css';
 
 import cclogo from '../img/cclogo.png';
-import stlogo from '../img/stlogo.png';
 import inoutlogo from '../img/inoutlogo.png';
+import stlogo from '../img/stlogo.png';
+import stationaryLogo from '../img/stationary.png';
+import homeDecorLogo from '../img/home-decor.png';
+import gardenDecorLogo from '../img/garden-decor.png';
+import lightSolLogo from '../img/light-sol.png';
+import notebookLogo from '../img/notebook.png';
+import pencilLogo from '../img/pencil.png';
+import penstandLogo from '../img/pen-stand.png';
+import penweightLogo from '../img/paper-weight.png';
+import laptopstandLogo from '../img/laptop-stand.png';
 
 class ProductPage extends React.Component {
   constructor() {
@@ -15,18 +24,27 @@ class ProductPage extends React.Component {
           productTypes: [
             {
               name:'notebook',
+              img: notebookLogo,
               products: ['p1', 'p2', 'p3', 'p4', 'p5']
             },
             {
               name:'pen stands',
+              img: pencilLogo,
               products: ['*p1', 'p2', 'p3', 'p4', 'p5']
             },
             {
               name:'paper weight',
+              img: penstandLogo,
               products: ['**p1', 'p2', 'p3', 'p4', 'p5']
             },
             {
+              name:'pen weight',
+              img: penweightLogo,
+              products: ['****p1', 'p2', 'p3', 'p4', 'p5']
+            },
+            {
               name:'laptop stands',
+              img: laptopstandLogo,
               products: ['***p1', 'p2', 'p3', 'p4', 'p5']
             }
           ]
@@ -126,7 +144,6 @@ class ProductPage extends React.Component {
   }
 
   changeSubcatagory(e) {
-    console.log(e);
     this.setState({ 
       active: {
         ...this.state.active,
@@ -144,11 +161,16 @@ class ProductPage extends React.Component {
   render() {
     var productTypes = this.state.catagory[this.state.active.catagory].productTypes.map((product, key) => {
       if (this.state.active.subcatagory === key) {
-        return (<div id={key} class="product-type do-bold" onClick={this.changeSubcatagory}>{product.name}</div>);
+        return (
+          <div class="product-type do-bold" onClick={this.changeSubcatagory}>
+            <img id={key} src={product.img} class="button-logo" alt="logo"></img>
+          </div>
+        );
       }
-      return (<div id={key} class="product-type" onClick={this.changeSubcatagory}>{product.name}</div>);
+      return (<div class="product-type" onClick={this.changeSubcatagory}>
+        <img id={key} src={product.img} class="button-logo" alt="logo"></img>
+      </div>);
     });
-    console.log('hi');
     console.log(this.state.catagory[this.state.active.catagory].productTypes[this.state.active.subcatagory]);
     var products = this.state.catagory[this.state.active.catagory].productTypes[this.state.active.subcatagory].products.map(product => {
       return (<div class="product"><Link to={{
@@ -166,12 +188,25 @@ class ProductPage extends React.Component {
           <div class="product-logo-space">
             <img src={cclogo} class="product-page-logo" alt="logo"></img>
           </div>
+          
           <div class="productpage">
             <div class="product-catagories">
-              <div id="stationary" class="catagory do-bold" onClick={this.changeCatagory}>Stationary</div>
-              <div id="homedecor" class="catagory" onClick={this.changeCatagory}>Home Decor</div>
-              <div id="gardendecor" class="catagory" onClick={this.changeCatagory}>Garden Decor</div>
-              <div id="lightingsol" class="catagory" onClick={this.changeCatagory}>Lighting Solution</div>
+              <div id="stationary" class="catagory do-bold" onClick={this.changeCatagory}>
+                <img src={stationaryLogo} class="button-logo" alt="logo"></img>
+                Stationary
+              </div>
+              <div id="homedecor" class="catagory" onClick={this.changeCatagory}>
+                <img src={homeDecorLogo} class="button-logo" alt="logo"></img>
+                Home Decor
+              </div>
+              <div id="gardendecor" class="catagory" onClick={this.changeCatagory}>
+                <img src={gardenDecorLogo} class="button-logo" alt="logo"></img>
+                Garden Decor
+              </div>
+              <div id="lightingsol" class="catagory" onClick={this.changeCatagory}>
+                <img src={lightSolLogo} class="button-logo" alt="logo"></img>
+                Lighting Solution
+              </div>
             </div>
             <div class="product-line">
               { productTypes }

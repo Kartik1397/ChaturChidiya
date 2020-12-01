@@ -32,7 +32,15 @@
 }
 
 .catagory {
+  display: flex;
+  align-items: center;
   font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.catagory img {
+  max-height: 5vh;
+  margin-right: 20px;
 }
 
 .product-line {
@@ -45,9 +53,9 @@
 
 .product-type {
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.1);
   height: 10vh;
   width: 10vh;
+  cursor: pointer;
 }
 
 .products-container {

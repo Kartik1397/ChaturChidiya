@@ -6,6 +6,18 @@ import './frontpage.css';
 import cclogo from '../img/cclogo.png';
 import inoutlogo from '../img/inoutlogo.png';
 import stlogo from '../img/stlogo.png';
+import stationaryLogo from '../img/stationary.png';
+import homeDecorLogo from '../img/home-decor.png';
+import gardenDecorLogo from '../img/garden-decor.png';
+import lightSolLogo from '../img/light-sol.png';
+import sitinLogo from '../img/sitin.png';
+import workonLogo from '../img/workon.png';
+import structureLogo from '../img/structure.png';
+import logoDesignLogo from '../img/logo-design.png';
+import PkgDesingLogo from '../img/pkg-design.png';
+import photoshootLogo from '../img/photoshoot.png';
+import customProductLogo from '../img/custom-product.png';
+import intExtLogo from '../img/int-ext.png';
 
 class FrontPage extends React.Component {
   componentDidMount() {
@@ -272,10 +284,22 @@ class FrontPage extends React.Component {
                 <img src={cclogo} class="card-logo" alt="logo"></img>
               </div>
               <div class="buttons buttons1">
-                <div class="button"></div>
-                <div class="button"></div>
-                <div class="button"></div>
-                <div class="button"></div>
+                <div class="button">
+                  <img src={lightSolLogo} class="button-logo" alt="logo"></img>
+                  <p><center>lightning solution</center></p>
+                </div>
+                <div class="button">
+                  <img src={gardenDecorLogo} class="button-logo" alt="logo"></img>
+                  <p><center>garden decor</center></p>
+                </div>
+                <div class="button">
+                  <img src={homeDecorLogo} class="button-logo" alt="logo"></img>
+                  <p><center>home decor</center></p>
+                </div>
+                <div class="button">
+                  <img src={stationaryLogo} class="button-logo" alt="logo"></img>
+                  <p><center>stationary</center></p>
+                </div>
               </div>
             </div>
             <div className="card-wrapper">
@@ -284,10 +308,22 @@ class FrontPage extends React.Component {
                 <img src={stlogo} class="card-logo" alt="logo"></img>
               </div>
               <div class="buttons buttons2">
-                <div class="button"></div>
-                <div class="button"></div>
-                <div class="button"></div>
-                <div class="button"></div>
+                <div class="button">
+                  <img src={structureLogo} class="button-logo" alt="logo"></img>
+                  <p><center>structure</center></p>
+                </div>
+                <div class="button">
+                  <img src={PkgDesingLogo} class="button-logo" alt="logo"></img>
+                  <p><center>store in</center></p>
+                </div>
+                <div class="button">
+                  <img src={workonLogo} class="button-logo" alt="logo"></img>
+                  <p><center>work on</center></p>
+                </div>
+                <div class="button">
+                  <img src={sitinLogo} class="button-logo" alt="logo"></img>
+                  <p><center>sit in</center></p>
+                </div>
               </div>
             </div>
             <div className="card-wrapper">
@@ -296,11 +332,26 @@ class FrontPage extends React.Component {
                 <img src={inoutlogo} class="card-logo" alt="logo"></img>
               </div>
               <div class="buttons buttons3">
-                <div class="button"></div>
-                <div class="button"></div>
-                <div class="button"></div>
-                <div class="button"></div>
-                <div class="button"></div>
+                <div class="button">
+                  <img src={intExtLogo} class="button-logo" alt="logo"></img>
+                  <p><center>interial/exterior decor</center></p>
+                </div>
+                <div class="button">
+                  <img src={customProductLogo} class="button-logo" alt="logo"></img>
+                  <p><center>customised products</center></p>
+                </div>
+                <div class="button">
+                  <img src={photoshootLogo} class="button-logo" alt="logo"></img>
+                  <p><center>photoshoot</center></p>
+                </div>
+                <div class="button">
+                  <img src={PkgDesingLogo} class="button-logo" alt="logo"></img>
+                  <p><center>packaging design</center></p>
+                </div>
+                <div class="button">
+                  <img src={logoDesignLogo} class="button-logo" alt="logo"></img>
+                  <p><center>logo design</center></p>
+                </div>
               </div>
             </div>
           </div>
