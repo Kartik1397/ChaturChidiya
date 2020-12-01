@@ -53,18 +53,22 @@ class ProductPage extends React.Component {
           productTypes: [
             {
               name:'*notebook',
+              img: notebookLogo,
               products: ['p1', 'p2', 'p3', 'p4', 'p5']
             },
             {
               name:'pen stands',
+              img: pencilLogo,
               products: ['p1', '*p2', 'p3', 'p4', 'p5']
             },
             {
               name:'paper weight',
+              img: penweightLogo,
               products: ['p1', '**p2', 'p3', 'p4', 'p5']
             },
             {
               name:'laptop stands',
+              img: laptopstandLogo,
               products: ['p1', '***p2', 'p3', 'p4', 'p5']
             }
           ]
@@ -73,18 +77,22 @@ class ProductPage extends React.Component {
           productTypes: [
             {
               name:'**notebook',
+              img: notebookLogo,
               products: ['p1', 'p2', 'p3', 'p4', 'p5']
             },
             {
               name:'pen stands',
+              img: pencilLogo,
               products: ['p1', 'p2', '**p3', 'p4', 'p5']
             },
             {
               name:'paper weight',
+              img: penweightLogo,
               products: ['p1', 'p2', '***p3', 'p4', 'p5']
             },
             {
               name:'laptop stands',
+              img: laptopstandLogo,
               products: ['p1', 'p2', '****p3', 'p4', 'p5']
             }
           ]
@@ -93,18 +101,22 @@ class ProductPage extends React.Component {
           productTypes: [
             {
               name:'***notebook',
+              img: notebookLogo,
               products: ['p1', 'p2', 'p3', 'p4', 'p5']
             },
             {
               name:'pen stands',
+              img: pencilLogo,
               products: ['p1', 'p2', 'p3', '*p4', 'p5']
             },
             {
               name:'paper weight',
+              img: penweightLogo,
               products: ['p1', 'p2', 'p3', '**p4', 'p5']
             },
             {
               name:'laptop stands',
+              img: laptopstandLogo,
               products: ['p1', 'p2', 'p3', '***p4', 'p5']
             }
           ]
