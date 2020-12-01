@@ -171,7 +171,6 @@ class ProductPage extends React.Component {
         <img id={key} src={product.img} class="button-logo" alt="logo"></img>
       </div>);
     });
-    console.log(this.state.catagory[this.state.active.catagory].productTypes[this.state.active.subcatagory]);
     var products = this.state.catagory[this.state.active.catagory].productTypes[this.state.active.subcatagory].products.map(product => {
       return (<div class="product"><Link to={{
         pathname:'/product/detail',

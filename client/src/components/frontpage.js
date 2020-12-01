@@ -1,5 +1,6 @@
 import React from 'react';
 import { gsap, ScrollTrigger, CSSRulePlugin, ScrollToPlugin } from "gsap/all";
+import { Link } from 'react-router-dom';
 
 import './frontpage.css';
 
@@ -278,82 +279,88 @@ class FrontPage extends React.Component {
           <div className="logo-space">
           </div>
           <div className="card-grid">
-            <div className="card-wrapper">
-              <div className="card-title title1">decor</div>
-              <div className="card card1">
-                <img src={cclogo} class="card-logo" alt="logo"></img>
+            <Link to={{pathname:'/product' }} onClick={() => { window.location.href = '/product'; }} style={{ textDecoration: 'none', color: 'black' }}>
+              <div className="card-wrapper">
+                <div className="card-title title1">decor</div>
+                <div className="card card1">
+                  <img src={cclogo} class="card-logo" alt="logo"></img>
+                </div>
+                  <div class="buttons buttons1">
+                    <div class="button">
+                      <img src={lightSolLogo} class="button-logo" alt="logo"></img>
+                      <p><center>lightning solution</center></p>
+                    </div>
+                    <div class="button">
+                      <img src={gardenDecorLogo} class="button-logo" alt="logo"></img>
+                      <p><center>garden decor</center></p>
+                    </div>
+                    <div class="button">
+                      <img src={homeDecorLogo} class="button-logo" alt="logo"></img>
+                      <p><center>home decor</center></p>
+                    </div>
+                    <div class="button">
+                      <img src={stationaryLogo} class="button-logo" alt="logo"></img>
+                      <p><center>stationary</center></p>
+                    </div>
+                  </div>
               </div>
-              <div class="buttons buttons1">
-                <div class="button">
-                  <img src={lightSolLogo} class="button-logo" alt="logo"></img>
-                  <p><center>lightning solution</center></p>
+            </Link>
+            <Link to={{pathname:'/product' }} onClick={() => { window.location.href = '/product'; }} style={{ textDecoration: 'none', color: 'black' }}>
+              <div className="card-wrapper">
+              <div className="card-title title2">furniture</div>
+                <div className="card card2">
+                  <img src={stlogo} class="card-logo" alt="logo"></img>
                 </div>
-                <div class="button">
-                  <img src={gardenDecorLogo} class="button-logo" alt="logo"></img>
-                  <p><center>garden decor</center></p>
-                </div>
-                <div class="button">
-                  <img src={homeDecorLogo} class="button-logo" alt="logo"></img>
-                  <p><center>home decor</center></p>
-                </div>
-                <div class="button">
-                  <img src={stationaryLogo} class="button-logo" alt="logo"></img>
-                  <p><center>stationary</center></p>
-                </div>
-              </div>
-            </div>
-            <div className="card-wrapper">
-            <div className="card-title title2">furniture</div>
-              <div className="card card2">
-                <img src={stlogo} class="card-logo" alt="logo"></img>
-              </div>
-              <div class="buttons buttons2">
-                <div class="button">
-                  <img src={structureLogo} class="button-logo" alt="logo"></img>
-                  <p><center>structure</center></p>
-                </div>
-                <div class="button">
-                  <img src={PkgDesingLogo} class="button-logo" alt="logo"></img>
-                  <p><center>store in</center></p>
-                </div>
-                <div class="button">
-                  <img src={workonLogo} class="button-logo" alt="logo"></img>
-                  <p><center>work on</center></p>
-                </div>
-                <div class="button">
-                  <img src={sitinLogo} class="button-logo" alt="logo"></img>
-                  <p><center>sit in</center></p>
-                </div>
-              </div>
-            </div>
-            <div className="card-wrapper">
-              <div className="card-title title3">projects</div>
-              <div className="card card3">
-                <img src={inoutlogo} class="card-logo" alt="logo"></img>
-              </div>
-              <div class="buttons buttons3">
-                <div class="button">
-                  <img src={intExtLogo} class="button-logo" alt="logo"></img>
-                  <p><center>interial/exterior decor</center></p>
-                </div>
-                <div class="button">
-                  <img src={customProductLogo} class="button-logo" alt="logo"></img>
-                  <p><center>customised products</center></p>
-                </div>
-                <div class="button">
-                  <img src={photoshootLogo} class="button-logo" alt="logo"></img>
-                  <p><center>photoshoot</center></p>
-                </div>
-                <div class="button">
-                  <img src={PkgDesingLogo} class="button-logo" alt="logo"></img>
-                  <p><center>packaging design</center></p>
-                </div>
-                <div class="button">
-                  <img src={logoDesignLogo} class="button-logo" alt="logo"></img>
-                  <p><center>logo design</center></p>
+                <div class="buttons buttons2">
+                  <div class="button">
+                    <img src={structureLogo} class="button-logo" alt="logo"></img>
+                    <p><center>structure</center></p>
+                  </div>
+                  <div class="button">
+                    <img src={PkgDesingLogo} class="button-logo" alt="logo"></img>
+                    <p><center>store in</center></p>
+                  </div>
+                  <div class="button">
+                    <img src={workonLogo} class="button-logo" alt="logo"></img>
+                    <p><center>work on</center></p>
+                  </div>
+                  <div class="button">
+                    <img src={sitinLogo} class="button-logo" alt="logo"></img>
+                    <p><center>sit in</center></p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
+            <Link to={{ pathname:'/product', state:{} }} onClick={() => { window.location.href = '/product'; }} style={{ textDecoration: 'none', color: 'black' }}>            
+              <div className="card-wrapper">
+                <div className="card-title title3">projects</div>
+                <div className="card card3">
+                  <img src={inoutlogo} class="card-logo" alt="logo"></img>
+                </div>
+                <div class="buttons buttons3">
+                  <div class="button">
+                    <img src={intExtLogo} class="button-logo" alt="logo"></img>
+                    <p><center>interial/exterior decor</center></p>
+                  </div>
+                  <div class="button">
+                    <img src={customProductLogo} class="button-logo" alt="logo"></img>
+                    <p><center>customised products</center></p>
+                  </div>
+                  <div class="button">
+                    <img src={photoshootLogo} class="button-logo" alt="logo"></img>
+                    <p><center>photoshoot</center></p>
+                  </div>
+                  <div class="button">
+                    <img src={PkgDesingLogo} class="button-logo" alt="logo"></img>
+                    <p><center>packaging design</center></p>
+                  </div>
+                  <div class="button">
+                    <img src={logoDesignLogo} class="button-logo" alt="logo"></img>
+                    <p><center>logo design</center></p>
+                  </div>
+                </div>
+              </div>
+            </Link>
           </div>
           <div className="nav-container">
             <div className = "navGrid">
