@@ -14,6 +14,7 @@ import pencilLogo from '../img/pencil.png';
 import penstandLogo from '../img/pen-stand.png';
 import penweightLogo from '../img/paper-weight.png';
 import laptopstandLogo from '../img/laptop-stand.png';
+import aeLogo from '../img/long-main.svg';
 
 class ProductPage extends React.Component {
   constructor() {
@@ -171,7 +172,8 @@ class ProductPage extends React.Component {
   }
   
   render() {
-    var productTypes = this.state.catagory[this.state.active.catagory].productTypes.map((product, key) => {
+    var productTypesData = this.state.catagory[this.state.active.catagory].productTypes;
+    var productTypes = productTypesData.map((product, key) => {
       if (this.state.active.subcatagory === key) {
         return (
           <div class="product-type do-bold" onClick={this.changeSubcatagory}>
@@ -179,9 +181,13 @@ class ProductPage extends React.Component {
           </div>
         );
       }
-      return (<div class="product-type" onClick={this.changeSubcatagory}>
-        <img id={key} src={product.img} class="button-logo" alt="logo"></img>
-      </div>);
+      return (
+        <>
+          <div class="product-type" onClick={this.changeSubcatagory}>
+            <img id={key} src={product.img} class="button-logo" alt="logo"></img>
+          </div>
+        </>
+      );
     });
     var products = this.state.catagory[this.state.active.catagory].productTypes[this.state.active.subcatagory].products.map(product => {
       return (<div class="product"><Link to={{
@@ -192,6 +198,7 @@ class ProductPage extends React.Component {
     return (
       <div class="product-page-wrapper">
         <div class="side-menu">
+          <img src={aeLogo} className="side-menu-logo" alt="logo"></img>
           <img src={stlogo} className="side-menu-logo" alt="logo"></img>
           <img src={inoutlogo} className="side-menu-logo" alt="logo"></img>
         </div>
@@ -218,6 +225,21 @@ class ProductPage extends React.Component {
                 <img src={lightSolLogo} class="button-logo" alt="logo"></img>
                 Lighting Solution
               </div>
+            </div>
+            <div class="drop-downs">
+              {
+                Object.entries(this.state.catagory).map((catagory) => {
+                  return(
+                    <div class="drop-down">
+                    {
+                      catagory[1].productTypes.map((product) => {
+                        return (<p>{product.name}</p>);
+                      })
+                    }
+                    </div>    
+                  )
+                })
+              }
             </div>
             <div class="product-line">
               { productTypes }

@@ -15,16 +15,31 @@
   padding-top: 2vw;
   padding-left: 1vw;
   max-width: 7vw;
+  max-height: 7vh;
 }
 
 .product-view {
-  width: 90vw;
+  width: 83vw;
+  margin-left: 3vw;
 }
 
 .product-catagories {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+}
+
+.drop-downs {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 5vh;
+}
+
+.drop-down {
+  width: 20vw;
+}
+
+.drop-down p {
+  padding-left: 6vh;
 }
 
 .do-bold {
@@ -36,6 +51,7 @@
   align-items: center;
   font-size: 1.5rem;
   cursor: pointer;
+  width: 20vw;
 }
 
 .catagory img {
@@ -45,14 +61,15 @@
 
 .product-line {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   height: 10vh;
   margin-bottom: 5vh;
+  margin-right: 5vw;
 }
 
 .product-type {
-  text-align: center;
+  text-align: left;
   height: 10vh;
   width: 10vh;
   cursor: pointer;
@@ -66,8 +83,12 @@
 .product {
   height: 20vh;
   background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
   margin: 20px;
-  text-align: center;
+  margin-left: 0;
+  display: grid;
+  place-items: center center;
+  font-size: 3em;
 }
 
 .product-logo-space {
@@ -75,6 +96,7 @@
   display: grid;
   justify-content: center;
   align-items: center;
+  margin-bottom: 3vh;
 }
 
 .product-page-logo {
