@@ -284,7 +284,7 @@ class FrontPage extends React.Component {
       <>
         <div className="logo">
           <div className="logo-wrapper">
-            <img src={aeLogo} height="80%" className="logo-svg"></img>
+            <img src={aeLogo} height="80%" className="logo-svg" alt="logo"></img>
             {/* <svg height="100%" width="100%" className="logo-svg" viewBox="0 0 350 258" fill="none" xmlns="http://www.w3.org/2000/svg">
   <circle cx="141.5" cy="68.5" r="56" stroke="black" stroke-opacity="0.25" stroke-width="5"/>
   <path d="M266.5 34C266.5 51.3627 252.208 65.5 234.5 65.5C216.792 65.5 202.5 51.3627 202.5 34C202.5 16.6373 216.792 2.5 234.5 2.5C252.208 2.5 266.5 16.6373 266.5 34Z" stroke="black" stroke-opacity="0.72" stroke-width="5"/>
