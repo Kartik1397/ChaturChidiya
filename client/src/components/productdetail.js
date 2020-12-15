@@ -7,6 +7,9 @@ class ProductDetailPage extends React.Component {
     return (
       <>
         <div class="product-detail-container">
+          <div class="close-button">
+            <div onClick={this.props.close}>X</div>
+          </div>
           <div class="product-display">
             <div class="product-name">{this.props.location.state.name}</div>
             <div class="product-img"></div>

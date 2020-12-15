@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './productpage.css';
+import ProductDetailPage from './productdetail';
 
 import cclogo from '../img/cclogo.png';
 import inoutlogo from '../img/inoutlogo.png';
@@ -126,7 +126,9 @@ class ProductPage extends React.Component {
       active: {
         catagory: 'stationary',
         subcatagory: 0,
-      }
+        product: ''
+      },
+      show: false
     }
 
     this.changeCatagory = this.changeCatagory.bind(this);
@@ -190,13 +192,14 @@ class ProductPage extends React.Component {
       );
     });
     var products = this.state.catagory[this.state.active.catagory].productTypes[this.state.active.subcatagory].products.map(product => {
-      return (<div class="product"><Link to={{
-        pathname:'/product/detail',
-        state: { name: product }
-      }} style={{ textDecoration: 'none', color: 'black' }}>{product}</Link></div>);
+      return (<div class="product" onClick={(e) => { this.setState({active: {...this.state.active, product}}); this.setState({show: true})}}>{product}</div>);
     });
     return (
       <div class="product-page-wrapper">
+        { this.state.show ? <ProductDetailPage 
+          location={{state: { name: this.state.active.product }}} 
+          close={() => { this.setState({show: false}); this.setState({active: {...this.state.active, product: ''}})}}
+        /> : ""}
         <div class="side-menu">
           <img src={aeLogo} className="side-menu-logo" alt="logo"></img>
           <img src={stlogo} className="side-menu-logo" alt="logo"></img>
