@@ -1,6 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Parisienne&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Khula:wght@300;400;600;700;800&display=swap");
 
+@font-face {
+  font-family: hand;
+  src: url(./font/Darkwoman.otf);
+}
+
 * {
   margin: 0;
   padding: 0;

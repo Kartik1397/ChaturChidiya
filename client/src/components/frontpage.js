@@ -20,6 +20,8 @@ import photoshootLogo from '../img/photoshoot.png';
 import customProductLogo from '../img/custom-product.png';
 import intExtLogo from '../img/int-ext.png';
 import aeLogo from '../img/AE.png';
+import aboutImg from '../img/about.JPG';
+import designImg from '../img/designphilo.JPG';
 
 class FrontPage extends React.Component {
   componentDidMount() {
@@ -118,7 +120,8 @@ class FrontPage extends React.Component {
     })
 
     tl3.to(".slogan", {
-      marginTop: 5
+      marginTop: 0,
+      fontSize: 24
     }, "<")
 
     function popUp(buttons, circle) {
@@ -393,32 +396,57 @@ class FrontPage extends React.Component {
           <div className="main-section">
             <div className="pages">
               <div className="page about">
-                <div className="founder-img"></div>
-                <div className="text">
-                about the founders and the rest of the team few liners for how it os generally used for
-  how it os generally used few liners for how it os generally used for how it os generally used.
-  few liners for how it os generally used for how it os generally used few liners for how it os
-  generally used for how it os generally used.
+                <div className="founder-img" style={{
+                  background: `url(${aboutImg})`,
+                  backgroundSize: "contain",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
+                  height: "40vh",
+                  margin: "0 auto",
+                  marginBottom: "3vh"
+                }}>
                 </div>
-              </div>
-              <div className="page design">
-                <div className="founder-img"></div>
                 <div className="text">
-                about the founders and the rest of the team few liners for how it os generally used for
-  how it os generally used few liners for how it os generally used for how it os generally used.
+                  More than just a start-up, Chatur Chidiyaa is a voyage that started from a leisure trip to Nal-sarovar (a wet land bird sanctuary in Gujarat) as a classroom project to a series of serious exhibitions that tested the model’s genuineness. The team collaborates on sustainability and design thinking to generate ideas that use old materials to make new concepts with an icing of handmade touch. We are a synchronization of curious Creatives who love to work with materials and passionate Marketers who believe that good design is about good idea presented intact.
+                </div>
+                <div className="text">
+                  We have a vision of imbibing sustainability in business as it optimizes the resources in an ingenious way satisfying our present need and saving sufficiently for the future.                </div>
+                </div>
+              <div className="page design">
+              <div className="founder-img" style={{
+                  background: `url(${designImg})`,
+                  backgroundSize: "contain",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
+                  height: "30vh",
+                  margin: "0 auto",
+                  marginBottom: "3vh"
+                }}>
+                </div>
+                <div className="text">
+                 Considering four pillars of a green business philosophy – product, process, place and people, it focuses on a design conscious handmade products made out of innocent (recycled, reused, up cycled) materials such as bamboo, fabric, clay, paper that appeals for a balance between Ecology and Human activities by providing an opportunity to prosper the financially under privileged and communities with mentally different people as Chatur Chidiyaa product makers.
+                </div>
+                <div className="text">
+                  It redefines the bridge between the effective ways of manufacturing and the human demand to live better with great products around. The users receive plenty of functional products with a tantalization to care about nature..
                 </div>
                 <div className="row">
                   <div className="col">
                     <div className="small-title">Vision</div>
-                    <div className="text-m">write up</div>
+                    <div className="text">
+                      To perceive a green business ideology that connects people with nature through ingenious ways.
+                    </div>
                   </div>
                   <div className="col">
                     <div className="small-title">Mission</div>
-                    <div className="text-m">write up</div>
+                    <div className="text">
+                    To establish a business model that focuses on design-conscious products made out of innocent materials that create a minimal carbon footprint.
+                    </div>
                   </div>
                   <div className="col">
                     <div className="small-title">Goal</div>
-                    <div className="text-m">write up</div>
+                    <div className="text">
+                      An endeavour that balances the ecology and human activities by providing an opportunity to prosper the local community through employment.
+                    </div>
                   </div>
                 </div>
               </div>
@@ -430,23 +458,62 @@ class FrontPage extends React.Component {
                 </div>
               </div>
               <div className="page contact">
-              <div className="founder-img"></div>
-                <div className="row">
-                  <div className="col">
-                    <div className="small-title">address</div>
-                    <div className="text-m">write up</div>
+              <div className="founder-img">
+                <iframe title="iframe" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14760.604274038265!2d73.2114527!3d22.347924!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xce7c5760b8b90cec!2sChatur%20Chidiyaa!5e0!3m2!1sen!2sin!4v1608361227933!5m2!1sen!2sin" width="600" height="450" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    border: "1px solid #b2c2e0",
+                    boxShadow: "2px 2px 10px 0 rgba(0, 0, 0, 0.1)",
+                    borderRadius: "7px",
+                  }}
+                ></iframe>
+              </div>
+                <div className="row"
+                  style={{
+                    alignItems: "start"
+                  }}
+                >
+                  <div className="col" style={{
+                    minWidth: "20vw",
+                  }}>
+                    <div className="small-title" style={{textAlign: "left"}}>address</div>
+                    <div className="text">
+                      Chatur Chidiyaa Studio,<br></br>
+                      402-B/ Temple view apt.<br></br>
+                      B\h Cygnus School, Motnath Mahadev Road,<br></br>
+                      Harni, Vadodara - 390 022<br></br>
+                      Gujarat, India<br></br>
+                    </div>
                   </div>
-                  <div className="col">
-                    <div className="small-title">contact person</div>
-                    <div className="text-m">write up</div>
+                  <div className="col" style={{
+                    minWidth: "20vw",
+                  }}>
+                    <div className="small-title" style={{textAlign: "left"}}>contact person</div>
+                    <div className="text">
+                      Ronak Shah<br></br>
+                      business communication<br></br> 
+                      09638598579<br></br>
+                      hello@chaturchidiyaa.com
+                    </div>
                   </div>
-                  <div className="col">
-                    <div className="small-title">timings</div>
-                    <div className="text-m">write up</div>
+                  <div className="col" style={{
+                    minWidth: "20vw",
+                  }}>
+                    <div className="small-title" style={{textAlign: "left"}}>timings</div>
+                    <div className="text">
+                      honestly, drop by anytime between 9AM-6PM:<br></br>
+                      for best hospitality: book an appointment 2 days prior for workshop tour and personal assistance to design process
+                    </div>
                   </div>
-                  <div className="col">
-                    <div className="small-title">inquiry form</div>
-                    <div className="text-m">write up</div>
+                  <div className="col" style={{
+                    minWidth: "20vw",
+                  }}>
+                    <div className="small-title" style={{textAlign: "left"}}>inquiry form</div>
+                    <div className="text">
+                      {/* TODO: ... */}
+                      attachment (standard form)
+                    </div>
                   </div>
                 </div>
               </div>

@@ -81,9 +81,9 @@
 
 .slogan {
   text-align: center;
-  font-size: 1.4em;
-  font-family: "Parisienne", cursive;
-  margin-top: 50px;
+  font-size: 2em;
+  font-family: "hand", cursive;
+  margin-top: 20px;
 }
 
 .slogan::before,
@@ -252,7 +252,10 @@
 }
 
 .text {
-  font-size: 1.3em;
+  margin-bottom: 5px;
+  font-size: 1.2em;
+  letter-spacing: 0.03em;
+  text-align: left;
 }
 
 .row {
