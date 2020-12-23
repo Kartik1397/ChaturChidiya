@@ -17,36 +17,22 @@
   align-items: center;
 }
 
-@media screen and (max-width: 900px) {
-  .card-grid {
-    height: 60vh;
-    display: flex;
-    justify-content: left;
-    overflow-x: auto;
-  }
-
-  ::-webkit-scrollbar {
-    display: none;
-  }
-
-  .card-wrapper {
-    padding: 0 10px;
-  }
+.design-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
+  padding: 0 5vw;
 }
 
-.nav-container {
-  height: 10vh;
-  margin: 0 12vh;
-}
-
-@media screen and (max-width: 900px) {
-  .nav-container {
-    margin: 0;
-  }
+.design-row .text {
+  text-align: center;
+  font-style: italic;
+  font-size: 1.1em;
 }
 
 .main-section {
   height: 70vh;
+  opacity: 0;
   overflow: hidden;
 }
 
@@ -96,16 +82,6 @@
   transform: translateY(-200%);
 }
 
-@media screen and (max-width: 900px) {
-  .slogan::before,
-  .slogan::after {
-    width: 10vh;
-  }
-
-  body {
-    font-size: 70%;
-  }
-}
 /*
 #ff3389
 #68bbaf
@@ -263,14 +239,104 @@
   justify-content: space-around;
   align-items: center;
   height: 20vh;
-  text-align: center;
 }
 
 .small-title {
   font-weight: bold;
   font-size: 1.5em;
+  text-align: center;
 }
 
 .text-m {
   font-size: 1.2em;
+}
+
+@media screen and (max-width: 900px) {
+  .card-grid {
+    height: 60vh;
+    display: flex;
+    justify-content: left;
+    overflow-x: auto;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card-wrapper {
+    padding: 0 10px;
+    width: 100%;
+  }
+}
+
+.nav-container {
+  height: 10vh;
+  margin: 0 12vh;
+}
+
+@media screen and (max-width: 900px) {
+  .nav-container {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .slogan::before,
+  .slogan::after {
+    width: 7vh;
+  }
+
+  body {
+    font-size: 70%;
+  }
+
+  .card-grid {
+    height: 50vh;
+  }
+
+  .main-section {
+    margin-top: 10vh;
+    height: auto;
+  }
+
+  .page {
+    height: auto;
+    margin-bottom: 10vh;
+  }
+
+  .founder-img {
+    height: 20vh !important;
+    background-size: cover !important;
+    background-position: top !important;
+  }
+
+  .title {
+    font-size: 3em;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .design-row {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .col {
+    margin-top: 30px;
+  }
+
+  .buttons {
+    display: none;
+  }
+
+  .logo {
+    background-color: #edeee9;
+  }
 }

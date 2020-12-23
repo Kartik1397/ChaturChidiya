@@ -229,7 +229,8 @@ class ProductPage extends React.Component {
                 Lighting Solution
               </div>
             </div>
-            <div class="drop-downs">
+            { visualViewport.width > 900 &&
+              <div class="drop-downs">
               {
                 Object.entries(this.state.catagory).map((catagory) => {
                   return(
@@ -243,7 +244,7 @@ class ProductPage extends React.Component {
                   )
                 })
               }
-            </div>
+            </div>}
             <div class="product-line">
               { productTypes }
               {/* <div class="product-type">notebooks</div>

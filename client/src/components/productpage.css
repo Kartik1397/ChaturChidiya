@@ -102,3 +102,61 @@
 .product-page-logo {
   max-height: 13vh;
 }
+
+@media screen and (max-width: 900px) {
+  .products-container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .button-logo {
+    max-width: 4vh;
+    max-height: 4vh;
+  }
+
+  .side-menu {
+    width: 0;
+    display: none;
+  }
+  .product-view {
+    width: 95vw;
+    overflow: hidden;
+  }
+
+  .product-line {
+    height: 6vh;
+    padding: 20px 0;
+    margin-right: 0;
+    border-top: 1px solid lightgray;
+  }
+
+  .product-type {
+    height: 4vh;
+    width: 4vh;
+  }
+
+  .product-catagories {
+    display: flex;
+    justify-content: space-between;
+    overflow: scroll;
+    margin: 20px 0;
+  }
+
+  .catagory {
+    min-width: 40vw;
+    font-size: 1.2em;
+  }
+
+  .product-logo-space {
+    margin-bottom: 0;
+  }
+
+  .product {
+    height: 30vh;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+  .product-line {
+    margin-bottom: 20px;
+  }
+}

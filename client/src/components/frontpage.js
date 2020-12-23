@@ -24,11 +24,11 @@ import aboutImg from '../img/about.JPG';
 import designImg from '../img/designphilo.JPG';
 
 class FrontPage extends React.Component {
-  componentDidMount() {
+  componentDidMount() {    
     gsap.registerPlugin(ScrollTrigger, CSSRulePlugin, ScrollToPlugin);
 
     var vh = visualViewport.height/100;
-
+    
     window.onresize = () => { 
       vh = visualViewport.height/100;
       ScrollTrigger.refresh();
@@ -39,7 +39,7 @@ class FrontPage extends React.Component {
     tl.from(".logo", {
       opacity: 0,
       y: 50,
-      duration: 1.5
+      duration: .5
     })
 
     tl.from(".slogan", {
@@ -47,12 +47,11 @@ class FrontPage extends React.Component {
       duration: 1
     }, "-=0.8")
 
-    console.log(CSSRulePlugin);
     var rule = CSSRulePlugin.getRule(".slogan::after");
     if (rule === undefined) {
       rule = CSSRulePlugin.getRule(".slogan::before");
     }
-    console.log(rule);
+
     tl.from(rule, {
       cssRule: {
         width: 0,
@@ -96,6 +95,11 @@ class FrontPage extends React.Component {
             duration: 1.5,
             delay: .5
           });
+          gsap.to(".main-section", {
+            opacity: 1,
+            duration: 1.5,
+            delay: .5
+          });
         }
       }
     })
@@ -123,6 +127,8 @@ class FrontPage extends React.Component {
       marginTop: 0,
       fontSize: 24
     }, "<")
+
+
 
     function popUp(buttons, circle) {
       var cx = circle.offsetTop + circle.offsetHeight/2;
@@ -156,6 +162,10 @@ class FrontPage extends React.Component {
     var buttons3 = document.querySelector(".buttons3");
     var circle3 = document.querySelector(".card3");
     popUp(buttons3, circle3);
+
+    if (visualViewport.width <= 900) {
+      return;
+    }
 
     var tl4 = gsap.timeline({
       scrollTrigger: {
@@ -385,17 +395,21 @@ class FrontPage extends React.Component {
               </div>
             </Link>
           </div>
-          <div className="nav-container">
+          { visualViewport.width > 900 &&
+            <div className="nav-container">
             <div className = "navGrid">
               <div onClick={() => {this.GSAPscroll(visualViewport.height/100*110 , "nav-about")}} className = "nav-about"> About</div>
               <div onClick={() => {this.GSAPscroll(visualViewport.height/100*170 , "nav-design")}} className = "nav-design">Design</div>
               <div onClick={() => {this.GSAPscroll(visualViewport.height/100*240 , "nav-testimony")}} className = "nav-testimony">Testimony</div>
               <div onClick={() => {this.GSAPscroll(visualViewport.height/100*350,"nav-contact")}} className = "nav-contact">Contact Us</div>
             </div>
-          </div>
+          </div>}
           <div className="main-section">
             <div className="pages">
               <div className="page about">
+                {
+                  visualViewport.width <= 900 && <div class="title nav-about">About</div>
+                }
                 <div className="founder-img" style={{
                   background: `url(${aboutImg})`,
                   backgroundSize: "contain",
@@ -413,6 +427,9 @@ class FrontPage extends React.Component {
                   We have a vision of imbibing sustainability in business as it optimizes the resources in an ingenious way satisfying our present need and saving sufficiently for the future.                </div>
                 </div>
               <div className="page design">
+              {
+                visualViewport.width <= 900 && <div class="title nav-design">Design philosophy</div>
+              }
               <div className="founder-img" style={{
                   background: `url(${designImg})`,
                   backgroundSize: "contain",
@@ -429,14 +446,14 @@ class FrontPage extends React.Component {
                 <div className="text">
                   It redefines the bridge between the effective ways of manufacturing and the human demand to live better with great products around. The users receive plenty of functional products with a tantalization to care about nature..
                 </div>
-                <div className="row">
-                  <div className="col">
+                <div className="design-row">
+                  <div className="col" style={{marginRight: "20px"}}>
                     <div className="small-title">Vision</div>
                     <div className="text">
                       To perceive a green business ideology that connects people with nature through ingenious ways.
                     </div>
                   </div>
-                  <div className="col">
+                  <div className="col" style={{marginRight: "20px"}}>
                     <div className="small-title">Mission</div>
                     <div className="text">
                     To establish a business model that focuses on design-conscious products made out of innocent materials that create a minimal carbon footprint.
@@ -451,6 +468,10 @@ class FrontPage extends React.Component {
                 </div>
               </div>
               <div className="page testimony">
+              {
+                visualViewport.width <= 900 && <div class="title nav-testimony">Testimony</div>
+              }
+
                 <div className="founder-img"></div>
                 <div className="text">
                 about the founders and the rest of the team few liners for how it os generally used for
@@ -458,6 +479,10 @@ class FrontPage extends React.Component {
                 </div>
               </div>
               <div className="page contact">
+              {
+                visualViewport.width <= 900 && <div class="title nav-contact">Contact</div>
+              }
+
               <div className="founder-img">
                 <iframe title="iframe" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14760.604274038265!2d73.2114527!3d22.347924!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xce7c5760b8b90cec!2sChatur%20Chidiyaa!5e0!3m2!1sen!2sin!4v1608361227933!5m2!1sen!2sin" width="600" height="450" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"
                   style={{

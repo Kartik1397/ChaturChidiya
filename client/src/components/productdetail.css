@@ -91,3 +91,43 @@
   margin: 3vh;
   margin-bottom: 0;
 }
+
+@media screen and (max-width: 900px) {
+  .product-opts {
+    grid-template-columns: 1fr;
+  }
+
+  .product-detail-container {
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    overflow: scroll;
+  }
+
+  .product-display {
+    padding-top: 10vh;
+    width: 100vw;
+  }
+
+  .close-button {
+    padding-top: 10vh;
+  }
+
+  .addtocart-button {
+    width: 40vw;
+  }
+
+  .product-price {
+    width: 40vw;
+  }
+
+  .product-info {
+    width: 90vw;
+    padding: 5vw;
+    font-size: 0.8em;
+  }
+
+  .product-opt {
+    width: 80vw;
+  }
+}
