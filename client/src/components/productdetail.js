@@ -1,6 +1,5 @@
 import React from 'react';
 import './productdetail.css';
-import { gsap, ScrollTrigger, CSSRulePlugin, ScrollToPlugin } from "gsap/all";
 
 class ProductDetailPage extends React.Component {
   render() {
